@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>文件上传</title>
+    <meta charset="UTF-8">
+</head>
+<body>
+    <h1>上传文件</h1>
+    <form action="/up/upload" method="post" enctype="multipart/form-data">
+        <input type="file" name="file"><br><br>
+        <label for="path">选择上传路径:</label>
+        <select name="path" id="path">
+            <option value=".">当前目录</option>
+            <option value="/hdd/data/models/sd/basic">model</option>
+            <option value="/hdd/data/models/sd/lora">lora</option>
+        </select><br><br>
+        <input type="submit" value="上传">
+    </form>
+</body>
+</html>
