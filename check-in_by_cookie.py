@@ -1,7 +1,6 @@
-import json
+import time
 
 import requests
-import time
 
 website_cookies_pairs = {
     'https://glados.space/api/user/checkin': {
@@ -10,23 +9,40 @@ website_cookies_pairs = {
         'koa:sess': 'eyJ1c2VySWQiOjUzMDgwNSwiX2V4cGlyZSI6MTc1MDk0MzY2Nzc1OCwiX21heEFnZSI6MjU5MjAwMDAwMDB9',
         'koa:sess.sig': 'GluBnMtC9qsHnrz_j7QY025L2mQ'
     },
-    'https://www.meimoai.com/api/user/sign-in': {
-        'cf_clearance': 'cKHOmmQ2DJXfWTC9W4uMLfrvyX3YIrEucD6fS68JZyA-1728745938-1.2.1.1-Wy2UDjPDnOzJ9qXtgSgQbPw22xY9aDayzENRQv8_B5vzI06WT9e75vfoSvYuiOTVaJjVXIyIOOdceTHMqHFZWZrA7Z1P3lkOPCYMT3n1f.LAr78ts32kHHW_Eq.3uJs3rYa82fxHdfhaw5dAfpMFflzHRvaMYzYhoEIK.E42iwLRlfOVvvpVu.kYntscYfOsm_Wc2ddQURoD20o60TqsJuOuIJHaXVPd1bAo5_hTq2ZG15BCUsyRtTOUANJdY1VINudw.818yx2ma2TlBXMTuFqCi3iRL2F98rXzr33Jv8ZAVAL6UUUa6WzNhLeknE3S8sBbJG9uchNxQMHygmrvHNoY7yzbW7ikPO9GqDZfjFZLJssl_EqZeKr6q2T4.SSrgFHNsiva_2p3tv4CkERpJQ',
+    'https://www.sexyai.top/api/user/sign-in': {
+        'cf_clearance': 'YUG2HGymDOuODUjtme6vUf4FRFYRdd56ocPW7zaf1OU-1738779028-1.2.1.1-zs6wRRj_bgPNcQN0uiCp_B9k8tP3CwY3ZDU5nhY0wFqMslZHDJpNYtZpSmQ0SntTWFfYyQnHPh3iNjaFrtil866Fju0pNB1CKhf3TkRc3THUxT.EiX6_4scVMP5_4zBdanB_pRxzphAxoFGhqisKhZY0T39PyV87mbfUXHEIrYaxypwXJEp8pGkUbAliFWjicy5KSTrEXO11P62w5mV8YHq00v3kH.wmGus3LNpZV_xJFGUKuaGfoNS2R4LizMKO1FuCPTCErFelUOvjh.TOh7J8sRzUH_SyTXIr23mplpg',
         'g_state': '{"i_l":0}'
     },
+    'https://www.jqmcy.net/wp-json/b2/v1/userMission': {
+        '': '__51uvsct__JzlfA6Ceb6XkEZjb=1; __51vcke__JzlfA6Ceb6XkEZjb=6839ac76-dd01-54ca-9b74-bae8e9586386; __51vuft__JzlfA6Ceb6XkEZjb=1738777239979; 5ec916ef4b27483d881ec60c5ccc81cd=7398bd474320c386297938c5f135154a; X_CACHE_KEY=fb70dacab943c7b80a18c23b352fb22a; _ga=GA1.1.1034956797.1738777242; _clck=zrtjkb%7C2%7Cft6%7C0%7C1862; gg_info=1738777245; b097ccc50f1fd60f2425116eabe06f9d=ca25aa5b422bb2e53b01c066bdc0db69; b2_token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwczpcL1wvd3d3LmpxbWN5Lm5ldCIsImlhdCI6MTczODc3ODA3NCwibmJmIjoxNzM4Nzc4MDc0LCJleHAiOjE3Mzk5ODc2NzQsImRhdGEiOnsidXNlciI6eyJpZCI6IjI3MTA2In19fQ.U3Q6AsuzQmnL3HyTg4v81_vX-JQDWinOx09q8il-pDA; wordpress_logged_in_1ac2ef818e3150718c06ed69957562b1=user27106_446%7C1739339674%7CXZ44hCRgbZH3jPfBwiiq0cMMKuzagX4HNeNnpjAS2R0%7C6abca32da36bccb160ce63fa52f11011f0ee8c79b0119b8f8a9fbe1bec68b79b; __vtins__JzlfA6Ceb6XkEZjb=%7B%22sid%22%3A%20%226d9de58e-ace0-5968-b2f8-913cdc247932%22%2C%20%22vd%22%3A%2021%2C%20%22stt%22%3A%20838942%2C%20%22dr%22%3A%2093384%2C%20%22expires%22%3A%201738779878918%2C%20%22ct%22%3A%201738778078918%7D; _ga_0XF072HTS6=GS1.1.1738777241.1.1.1738778078.60.0.0; PHPSESSID=13541emdq4ogtsj6sc1qgfha5f; _clsk=10d6987%7C1738778093023%7C1%7C1%7Cj.clarity.ms%2Fcollect'
+    }
 
 }
 
 website_payload_pairs = {
-    'https://glados.space/api/user/checkin': {'token': 'glados.one'}
+    'https://glados.space/api/user/checkin': {'token': 'glados.one'},
 
-    }
+}
 
 website_headers_pairs = {
-    'https://www.meimoai.com/api/user/sign-in': {
-        'Authorization': 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE3Mjg3NDU5MDksImV4cCI6MTczMTMzNzkwOSwiVUlEIjo1MDQ3N30.-jL1gyvIfMNDljkGcbiC_FXGC5RG8AFIe6yJuTsIyxw'
+    'https://www.sexyai.top/api/user/sign-in': {
+        'Authorization': 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE3Mzg3NzkwNzksImV4cCI6MTc0MTM3MTA3OSwiVUlEIjo1MDQ3N30.CKrYZ6o_T-y6PQX8me0lLvwSYKOqJfyVmssRXIxjkFs'
+    },
+    'https://www.jqmcy.net/wp-json/b2/v1/userMission': {
+        'authorization': 'Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwczpcL1wvd3d3LmpxbWN5Lm5ldCIsImlhdCI6MTczODc3ODA3NCwibmJmIjoxNzM4Nzc4MDc0LCJleHAiOjE3Mzk5ODc2NzQsImRhdGEiOnsidXNlciI6eyJpZCI6IjI3MTA2In19fQ.U3Q6AsuzQmnL3HyTg4v81_vX-JQDWinOx09q8il-pDA'
     }
 }
+
+need_proxies = [
+    'https://www.sexyai.top/api/user/sign-in',
+]
+
+
+proxies = {
+    'http': 'http://127.0.0.1:7890',
+    'https': 'http://127.0.0.1:7890'
+}
+
 
 # payload = json.dumps({'token': 'glados.one'})
 
@@ -34,20 +50,26 @@ website_headers_pairs = {
 # 将字典格式化为 Cookie 字符串
 
 def format_cookies(cookies):
+    # 如果仅由一个键值对组成，且key为空，则直接返回value。说明是直接从浏览器复制的 Cookie 字符串
+    if len(cookies) == 1 and '' in cookies:
+        return cookies['']
     return '; '.join([f'{key}={value}' for key, value in cookies.items()])
 
 
-
 # 定义发送请求的函数
-def send_checkin_request(url,headers,payload):
+def send_checkin_request(url, headers, payload):
     try:
         print('Sending check-in request to:', url)
-        response = requests.post(url, headers=headers, json=payload)
+        if url in need_proxies:
+            response = requests.post(url, headers=headers, json=payload, proxies=proxies)
+        else:
+            response = requests.post(url, headers=headers, json=payload)
         print('Check-in Status Code:', response.status_code)
         print('Check-in Response:', response.json())
         print('Check-in Time:', time.ctime())
     except Exception as e:
         print('An error occurred:', e)
+
 
 # 主循环，每隔 3 小时发送一次请求
 while True:

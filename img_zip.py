@@ -5,8 +5,8 @@ import subprocess
 process_type=['jpg','png']
 
 def compress_image(input_file, output_file, max_long_edge, compression_level):
-    ffmpeg_command = (f"ffmpeg -loglevel error -threads 16 -y -i '{input_file}' -vf 'scale=w=if(gte(iw\,ih)\,min(iw\,{max_long_edge})\,-1):h=if(gte(iw\,ih)\,-1\,min(ih\,{max_long_edge})):flags=lanczos' "
-                      f"-pix_fmt yuvj420p -color_range tv -qmin 1 -q:v {compression_level} '{output_file}'")
+    ffmpeg_command = (f"ffmpeg -loglevel error -threads 16 -y -i \"{input_file}\" -vf \"scale=w=if(gte(iw\,ih)\,min(iw\,{max_long_edge})\,-1):h=if(gte(iw\,ih)\,-1\,min(ih\,{max_long_edge})):flags=lanczos\" "
+                      f"-pix_fmt yuvj420p -color_range tv -qmin 1 -q:v {compression_level} \"{output_file}\"")
     subprocess.run(ffmpeg_command, shell=True)
 
 def compress_images_in_directory(input_dir, max_long_edge, compression_level):
@@ -21,7 +21,7 @@ def compress_images_in_directory(input_dir, max_long_edge, compression_level):
                 print('Processing \t '+input_path)
                 compress_image(input_path, input_path.replace('png','jpg'), max_long_edge, compression_level)
 
-max_long_edge=5000
+max_long_edge=6000
 
 if __name__ == "__main__":
     if len(sys.argv) < 2:
